@@ -7,16 +7,16 @@ import com.kn.tip.problem.LargestPrimeFactor;
 import static org.junit.Assert.assertEquals;
 
 public class LargestPrimeFactorTest {
-    @Test
-    public void test() {
-        assertEquals(5L, LargestPrimeFactor.compute(10L));
+  @Test
+  public void test() {
+    assertEquals(5L, LargestPrimeFactor.compute(10L));
 
-        assertEquals(17L, LargestPrimeFactor.compute(17L));
+    assertEquals(17L, LargestPrimeFactor.compute(17L));
 
-        assertEquals(6857L, LargestPrimeFactor.compute(600851475143L));
+    assertEquals(6857L, LargestPrimeFactor.compute(600851475143L));
 
-        // very large prime
-        assertEquals(100000000003L, LargestPrimeFactor.compute(100000000003L));
+    // very large prime
+    assertEquals(100000000003L, LargestPrimeFactor.compute(100000000003L));
 
-    }
+  }
 }
