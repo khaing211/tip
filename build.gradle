@@ -1,0 +1,22 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url "https://raw.github.com/khaing211/maven-repo/master/releases" }
+    maven { url 'https://plugins.gradle.org/m2/' }
+  }
+
+  dependencies {
+    classpath group: 'com.kn.forge', name: 'java-project-plugin', version: forgeVersion
+    classpath group: 'com.kn.forge', name: 'code-style-plugin', version: forgeVersion
+  }
+}
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'java-project'
+apply plugin: 'java-code-style'
+
+
+task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
