@@ -10,8 +10,8 @@ public class CountOf2 {
     System.out.println(countNaive(200));
     System.out.println(countNaive(2000));
   }
-  
-  
+
+
   // TODO: improve
   public static int countNaive(int n) {
     int sum = 0;
@@ -20,7 +20,7 @@ public class CountOf2 {
     }
     return sum;
   }
-  
+
   public static int count2InNumber(int x) {
     int count = 0;
     while (x != 0) {

@@ -5,14 +5,14 @@ package com.kn.tip.problem.ctci;
  */
 public class ParkingLot {
   private static int NUM_SPOTS = 10;
-  
+
   private final Spot[] spots = new Spot[NUM_SPOTS];
   private int numOfOccupiedSpots;
-  
+
   public boolean isFull() {
     return numOfOccupiedSpots == NUM_SPOTS;
   }
-  
+
   public void occupied(int number) {
     if (spots[number] == null || !spots[number].occupied) {
       if (spots[number] == null) {
@@ -23,10 +23,10 @@ public class ParkingLot {
       numOfOccupiedSpots++;
     } else {
       throw new IllegalArgumentException("Spot " + number + " is occupied");
-    } 
+    }
   }
-  
-  
+
+
   public static class Spot {
     public int number;
     public boolean occupied;

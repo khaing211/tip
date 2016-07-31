@@ -1,8 +1,8 @@
 package com.kn.tip.problem.leetcode;
 
 /**
- * You must do this in-place without making a copy of the array.
- * Minimize the total number of operations.
+ * You must do this in-place without making a copy of the array. Minimize the total number of
+ * operations.
  */
 public class MoveZeroes {
   public void moveZeroes(int[] nums) {

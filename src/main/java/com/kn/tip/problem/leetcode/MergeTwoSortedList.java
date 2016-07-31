@@ -1,7 +1,7 @@
 package com.kn.tip.problem.leetcode;
 
 /**
- * Follow up question: what if you know l2 is always way way longer than l1? 
+ * Follow up question: what if you know l2 is always way way longer than l1?
  */
 public class MergeTwoSortedList {
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

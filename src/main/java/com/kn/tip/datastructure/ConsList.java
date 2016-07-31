@@ -8,64 +8,64 @@ import java.util.List;
  *
  */
 public interface ConsList<T> {
-    public T head();
+  public T head();
 
-    public ConsList<T> tail();
+  public ConsList<T> tail();
 
-    public static <T> ConsList<T> cons(T head) {
-        return cons(head, nil());
+  public static <T> ConsList<T> cons(T head) {
+    return cons(head, nil());
+  }
+
+  public static <T> ConsList<T> cons(T head, ConsList<T> tail) {
+    return new Cons<T>(head, tail);
+  }
+
+  public static <T> ConsList<T> nil() {
+    return new Nil<T>();
+  }
+
+  public static <T> List<T> toList(ConsList<T> consList) {
+    final List<T> result = new LinkedList<T>();
+
+    while (consList instanceof Cons) {
+      result.add(consList.head());
+      consList = consList.tail();
     }
 
-    public static <T> ConsList<T> cons(T head, ConsList<T> tail) {
-        return new Cons<T>(head, tail);
+    return result;
+  }
+
+  final public static class Cons<T> implements ConsList<T> {
+
+    final private T head;
+    final private ConsList<T> tail;
+
+    public Cons(T head, ConsList<T> tail) {
+      this.head = head;
+      this.tail = tail;
     }
 
-    public static <T> ConsList<T> nil() {
-        return new Nil<T>();
+    @Override
+    public T head() {
+      return head;
     }
 
-    public static <T> List<T> toList(ConsList<T> consList) {
-        final List<T> result = new LinkedList<T>();
+    @Override
+    public ConsList<T> tail() {
+      return tail;
+    }
+  }
 
-        while (consList instanceof Cons) {
-            result.add(consList.head());
-            consList = consList.tail();
-        }
+  final public static class Nil<T> implements ConsList<T> {
 
-        return result;
+    @Override
+    public T head() {
+      throw new IndexOutOfBoundsException();
     }
 
-    final public static class Cons<T> implements ConsList<T> {
-
-        final private T head;
-        final private ConsList<T> tail;
-
-        public Cons(T head, ConsList<T> tail) {
-            this.head = head;
-            this.tail = tail;
-        }
-
-        @Override
-        public T head() {
-            return head;
-        }
-
-        @Override
-        public ConsList<T> tail() {
-            return tail;
-        }
+    @Override
+    public ConsList<T> tail() {
+      throw new IndexOutOfBoundsException();
     }
-
-    final public static class Nil<T> implements ConsList<T> {
-
-        @Override
-        public T head() {
-            throw new IndexOutOfBoundsException();
-        }
-
-        @Override
-        public ConsList<T> tail() {
-            throw new IndexOutOfBoundsException();
-        }
-    }
+  }
 }

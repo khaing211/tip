@@ -28,18 +28,18 @@ public class ChessboardShapes {
 
   int floodFillArea(boolean[][] board, boolean[][] visited, int[] start) {
     final int[][] NEIGHBORS = new int[][] {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-    
+
     int area = 0;
     Stack<int[]> traverse = new Stack<int[]>();
     traverse.push(start);
-    
+
     while (!traverse.isEmpty()) {
       int[] node = traverse.pop();
-      
+
       if (outOfBound(node))
         continue;
-      
-      // not visited and is black 
+
+      // not visited and is black
       if (!visited[node[0]][node[1]] && board[node[0]][node[1]]) {
         visited[node[0]][node[1]] = true;
         area++;
@@ -48,7 +48,7 @@ public class ChessboardShapes {
         }
       }
     }
-    
+
     return area;
   }
 

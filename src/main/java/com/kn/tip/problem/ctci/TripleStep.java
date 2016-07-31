@@ -9,21 +9,21 @@ public class TripleStep {
     System.out.println(countWayUpTheStair(4));
     System.out.println(countWayUpTheStair(10));
   }
-  
+
   public static int countWayUpTheStair(int n) {
-    int[] array = new int[n+1];
+    int[] array = new int[n + 1];
     // base case
-    array[0] = 1; 
+    array[0] = 1;
     array[1] = 1;
-    
+
     for (int i = 2; i <= n; i++) {
-      array[i] += array[i-1];
-      array[i] += array[i-2];
+      array[i] += array[i - 1];
+      array[i] += array[i - 2];
       if (i >= 3) {
-        array[i] += array[i-3];
+        array[i] += array[i - 3];
       }
     }
-    
+
     return array[n];
   }
 }

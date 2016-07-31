@@ -7,7 +7,7 @@ public class OneAway {
     System.out.println(isOneAway("pale", "bale"));
     System.out.println(isOneAway("pale", "bake"));
   }
-  
+
   public static boolean isOneAway(String s1, String s2) {
     if (s1.length() == s2.length()) {
       // replace edit
@@ -17,14 +17,14 @@ public class OneAway {
           mismatchCount++;
         }
       }
-      
+
       return mismatchCount <= 1;
-      
-    } else if (Math.abs(s1.length() - s2.length()) == 1){
+
+    } else if (Math.abs(s1.length() - s2.length()) == 1) {
       // delete or insert edit
       int i = 0;
       int j = 0;
-      
+
       // check the prefix
       while (i < s1.length() && j < s2.length()) {
         if (s1.charAt(i) != s2.charAt(j)) {
@@ -33,18 +33,18 @@ public class OneAway {
         i++;
         j++;
       }
-      
+
       // match all prefix
-      if (i == s1.length()-1 || j == s2.length()-1) {
+      if (i == s1.length() - 1 || j == s2.length() - 1) {
         return true;
       }
-      
+
       if (s1.length() > s2.length()) {
         i++;
       } else {
         j++;
       }
-      
+
       // check the suffix
       while (i < s1.length() && j < s2.length()) {
         if (s1.charAt(i) != s2.charAt(j)) {
@@ -53,12 +53,12 @@ public class OneAway {
         i++;
         j++;
       }
-      
+
       return true;
-      
+
     } else {
       return false;
     }
-    
+
   }
 }

@@ -12,17 +12,17 @@ public class Permutation {
   public static List<String> generate(String text) {
     final ArrayList<String> results = new ArrayList<String>();
     for (int i = 0; i < text.length(); i++) {
-        // Record size as we will be adding to the list
-        // neat trick
-        int resultsLength = results.size();
-        for (int j = 0; j < resultsLength; j++) {
-          String result = results.get(j);
-          for (int k = 0; k <= result.length(); k++) {
-            results.add(result.substring(0,k) + text.charAt(i) + result.substring(k));
-          }
+      // Record size as we will be adding to the list
+      // neat trick
+      int resultsLength = results.size();
+      for (int j = 0; j < resultsLength; j++) {
+        String result = results.get(j);
+        for (int k = 0; k <= result.length(); k++) {
+          results.add(result.substring(0, k) + text.charAt(i) + result.substring(k));
         }
-        // generate {} + text[i] set
-        results.add(Character.toString(text.charAt(i)));
+      }
+      // generate {} + text[i] set
+      results.add(Character.toString(text.charAt(i)));
     }
     return results;
   }
@@ -113,9 +113,9 @@ public class Permutation {
 
 
   public static void main(String[] args) {
-    //permutate3(new int[] {1, 2, 3, 4, 5});
-    //System.out.println("=============");
-    //permutate(new int[] {1, 2, 3, 4, 5}, 3);
+    // permutate3(new int[] {1, 2, 3, 4, 5});
+    // System.out.println("=============");
+    // permutate(new int[] {1, 2, 3, 4, 5}, 3);
     System.out.println(generate("abcaa"));
   }
 }

@@ -4,26 +4,25 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class NaryTreeNode<T> {
-    private T value;
-	private List<NaryTreeNode<T>> children;
+  private T value;
+  private List<NaryTreeNode<T>> children;
 
-	public NaryTreeNode(T value) {
-		this.value = value;
-		this.children = new LinkedList<NaryTreeNode<T>>();
-	}
+  public NaryTreeNode(T value) {
+    this.value = value;
+    this.children = new LinkedList<NaryTreeNode<T>>();
+  }
 
-	public NaryTreeNode() {
-	}
+  public NaryTreeNode() {}
 
-	public T getValue() {
-		return value;
-	}
+  public T getValue() {
+    return value;
+  }
 
-	public void setValue(T value) {
-		this.value = value;
-	}
+  public void setValue(T value) {
+    this.value = value;
+  }
 
-	public List<NaryTreeNode<T>> getChildren() {
-		return children;
-	}
+  public List<NaryTreeNode<T>> getChildren() {
+    return children;
+  }
 }

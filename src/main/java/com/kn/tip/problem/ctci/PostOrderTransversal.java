@@ -6,8 +6,9 @@ import com.kn.tip.datastructure.TreeNode;
 
 public interface PostOrderTransversal {
   public static <T> void transverse(TreeNode<T> root, Consumer<T> visit) {
-    if (root == null) return;
-    
+    if (root == null)
+      return;
+
     transverse(root.getLeft(), visit);
     transverse(root.getRight(), visit);
 

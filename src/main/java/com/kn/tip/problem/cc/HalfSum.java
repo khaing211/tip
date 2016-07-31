@@ -15,12 +15,12 @@ public class HalfSum {
     if (sum % 2 == 1) {
       return false;
     }
-    
+
     int halfSum = sum / 2;
-    
+
     return SubsetSum.isSubsetDP(array, halfSum);
   }
-  
+
   public static int sum(int[] array) {
     int sum = 0;
     for (int i = 0; i < array.length; i++) {

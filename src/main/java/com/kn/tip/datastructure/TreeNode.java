@@ -49,7 +49,7 @@ public class TreeNode<T> {
   public boolean hasParent() {
     return getParent() != null;
   }
-  
+
   public TreeNode<T> getParent() {
     return parent;
   }
@@ -60,9 +60,6 @@ public class TreeNode<T> {
 
   @Override
   public String toString() {
-    return "TreeNode [left=" + left + 
-        ", right=" + right + 
-        ", value=" + value
-        + "]";
+    return "TreeNode [left=" + left + ", right=" + right + ", value=" + value + "]";
   }
 }

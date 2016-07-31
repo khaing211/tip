@@ -8,13 +8,13 @@ public class PlusOne {
       carry = digits[i] / 10;
       digits[i] = digits[i] % 10;
     }
-    
+
     if (carry == 0) {
       return digits;
     }
-    
-    
-    int[] copy = new int[digits.length+1];
+
+
+    int[] copy = new int[digits.length + 1];
     System.arraycopy(digits, 0, copy, 1, digits.length);
     copy[0] = carry;
 

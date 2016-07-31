@@ -2,24 +2,18 @@ package com.kn.tip.problem.cc;
 
 public class LongestSequenceOf10 {
   public static void main(String[] args) {
-    System.out.println(longestSequence(new int[] {
-        0,0,1,1,1,0,0
-    }, 1));
-    
-    System.out.println(longestSequence(new int[] {
-        0,1,1,0,1
-    }, 1));
-    
-    System.out.println(longestSequence(new int[] {
-        0,1,1,0,1,0,0,1,1,1,0
-    }, 2));
+    System.out.println(longestSequence(new int[] {0, 0, 1, 1, 1, 0, 0}, 1));
+
+    System.out.println(longestSequence(new int[] {0, 1, 1, 0, 1}, 1));
+
+    System.out.println(longestSequence(new int[] {0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0}, 2));
   }
 
   /**
-   * Given an array of 0s and 1s, and k, Find the longest continuous streak of 1s after flipping k 0s to 1s. 
+   * Given an array of 0s and 1s, and k, Find the longest continuous streak of 1s after flipping k
+   * 0s to 1s.
    *
-   * E.x array is {1,1,0,0,1,1,1,0,1,1} 
-   * k = 1 (which means we can flip ‘k’ one 0 to 1)
+   * E.x array is {1,1,0,0,1,1,1,0,1,1} k = 1 (which means we can flip ‘k’ one 0 to 1)
    */
   public static int longestSequence(int[] array, int k) {
     int maxLength = 0;

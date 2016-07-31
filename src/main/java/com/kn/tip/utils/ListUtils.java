@@ -7,10 +7,10 @@ import java.util.List;
  */
 public interface ListUtils {
 
-	// Swaps elements of a list.
-	public static <T> void swap(List<T> list, int fooIndex, int barIndex) {
-		T tmp = list.get(fooIndex);
-		list.set(fooIndex, list.get(barIndex));
-		list.set(barIndex, tmp);
-	}
+  // Swaps elements of a list.
+  public static <T> void swap(List<T> list, int fooIndex, int barIndex) {
+    T tmp = list.get(fooIndex);
+    list.set(fooIndex, list.get(barIndex));
+    list.set(barIndex, tmp);
+  }
 }
