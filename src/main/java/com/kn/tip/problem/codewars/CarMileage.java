@@ -116,7 +116,7 @@ public class CarMileage {
             s -> new StringBuilder(s).reverse().toString().equals(s),
             s -> "1234567890".contains(s),
             s -> "9876543210".contains(s),
-            s -> Arrays.stream(awesomePhrases).anyMatch(n -> parseInt(s) == n)
+            s -> Arrays.stream(awesomePhrases).anyMatch(n -> Integer.parseInt(s) == n)
     ).anyMatch( p -> number > 99 && p.test(Integer.toString(number)));
   }
 
