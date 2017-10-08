@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class EletronicsShope {
+/**
+ * https://www.hackerrank.com/challenges/electronics-shop
+ */
+public class EletronicsShop {
   static int getMoneySpent(final Integer[] keyboards, final Integer[] drives, final int s) {
     // descending order [3,2,1....]
     Arrays.sort(keyboards, Collections.reverseOrder());
