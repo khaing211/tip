@@ -1,27 +1,38 @@
 package com.kn.tip.problem.hackerrank;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  * https://www.hackerrank.com/challenges/array-left-rotation
  */
 public class InPlaceArrayRotation {
+  // The else block can be removed/merged is there to demonstrate the evolution of logic
   static int[] leftRotation(final int[] a, final int d) {
+    // assume a.length > 0
     // inplace rotation
     final int n = a.length;
-    // assume a.length > 0
-    final boolean half = n / 2 == d;
-    if (half) {
-      for (int i = 0; i < n / 2; i++) {
-        swap(a, i, n / 2 + i);
+    final int gcd = gcd(n, d);
+    final boolean nonOneGcd = gcd != 1;
+    if (nonOneGcd) {
+      final int nblock = n / gcd;
+      for (int j = 0; j < gcd; j++) {
+        int nextIndex = j;
+        int nextValue = a[j];
+        for (int i = 0; i < nblock; i++) {
+          final int currentIndex = nextIndex;
+          final int currentValue = nextValue;
+          nextIndex = shiftLeft(currentIndex, d, n);
+          nextValue = a[nextIndex];
+          a[nextIndex] = currentValue;
+        }
       }
     } else {
       // The following algorithm serves by putting
       // the nextIndex/nextValue into a temporary variables. This make O(1) space.
       // Visualization: there is a rabbit jump by 'd' distance for every 'step'
       // by n steps, the rabbit should visit all the square
-      // with the exception of 'd' = n/2. At the exception
-      // the rabbit would run in 'circle'.
+      // with the exception of gcd(n d) != 1. At the exception
+      // the rabbit would run in 'circle' after n/gcd(n,d) steps.
       int nextIndex = 0;
       int nextValue = a[nextIndex];
       for (int i = 0; i < n; i++) {
@@ -46,7 +57,25 @@ public class InPlaceArrayRotation {
     return (i - d + n) % n;
   }
 
+  static int gcd(int a, int b) {
+    while (a != b) {
+      if (a > b) {
+        a = a - b;
+      } else {
+        b = b - a;
+      }
+    }
+    return a;
+  }
+
   public static void main(final String[] args) {
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5}, 2)));
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5}, 3)));
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5}, 4)));
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5, 6}, 4)));
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8}, 3)));
+    System.out.println(Arrays.toString(leftRotation(new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8}, 4)));
+    /*
     final Scanner in = new Scanner(System.in);
     final int n = in.nextInt();
     final int d = in.nextInt();
@@ -62,5 +91,6 @@ public class InPlaceArrayRotation {
 
 
     in.close();
+    */
   }
 }
