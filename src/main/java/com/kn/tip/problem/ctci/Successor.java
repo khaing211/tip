@@ -3,8 +3,8 @@ package com.kn.tip.problem.ctci;
 import com.kn.tip.datastructure.TreeNode;
 
 public class Successor {
-  public static void main(String[] args) {
-    TreeNode<Integer> root = MinimalTree.createBST(new int[] {1, 2, 3, 4, 5});
+  public static void main(final String[] args) {
+    final TreeNode<Integer> root = MinimalTree.createBST(new int[] {1, 2, 3, 4, 5});
     TreeNode<Integer> current = leftMost(root);
 
     do {
@@ -19,7 +19,7 @@ public class Successor {
     } while (null != (current = nextPostOrder(current)));
 
     System.out.println("=====");
-    PostOrderTransversal.transverse(root, i -> System.out.println(i));
+    PostOrderTraversal.transverse(root, i -> System.out.println(i));
 
     System.out.println("=====");
     current = root;
@@ -28,14 +28,15 @@ public class Successor {
     } while (null != (current = nextPreOrder(current)));
 
     System.out.println("=====");
-    PreOrderTransversal.transverse(root, i -> System.out.println(i));
+    PreOrderTraversal.transverse(root, i -> System.out.println(i));
   }
 
   // tricky
-  // in-order transversal
+  // in-order traversal
   public static <T> TreeNode<T> nextInOrder(TreeNode<T> current) {
-    if (current == null)
+    if (current == null) {
       return null;
+    }
 
     if (current.hasRight()) {
       current = current.getRight();

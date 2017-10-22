@@ -49,8 +49,8 @@ public class CheckSubtree {
     List<T> listA = new ArrayList<T>();
     List<T> listB = new ArrayList<T>();
 
-    PreOrderTransversal.transverse(a, i -> listA.add(i));
-    PreOrderTransversal.transverse(b, i -> listB.add(i));
+    PreOrderTraversal.transverse(a, i -> listA.add(i));
+    PreOrderTraversal.transverse(b, i -> listB.add(i));
 
     return -1 != Collections.indexOfSubList(listA, listB);
   }

@@ -28,7 +28,7 @@ public class MinimalTree {
 
   public static void main(String[] args) {
     TreeNode<Integer> root1 = MinimalTree.createBST(new int[] {1, 2, 3, 4});
-    InOrderTransversal.transverse(root1, i -> System.out.print(i + " "));
+    InOrderTraversal.transverse(root1, i -> System.out.print(i + " "));
     System.out.println();
     System.out.println(TreeDiameter.height(root1));
   }
