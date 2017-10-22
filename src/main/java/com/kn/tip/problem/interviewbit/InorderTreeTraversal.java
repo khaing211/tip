@@ -15,13 +15,15 @@ import java.util.Stack;
 public class InorderTreeTraversal {
   public ArrayList<Integer> inorderTraversal(final TreeNode a) {
     final ArrayList<Integer> element = new ArrayList<>();
-    final Stack<TreeNode> stack = new Stack<>();
-    pushLeft(stack, a);
-    while (!stack.isEmpty()) {
-      final TreeNode current = stack.pop();
+    // when a process a node on this stack,
+    // you can assume that all left children nodes is processed prior
+    final Stack<TreeNode> leftNodesStack = new Stack<>();
+    pushLeft(leftNodesStack, a);
+    while (!leftNodesStack.isEmpty()) {
+      final TreeNode current = leftNodesStack.pop();
       element.add(current.val);
       if (current.right != null) {
-        pushLeft(stack, current.right);
+        pushLeft(leftNodesStack, current.right);
       }
     }
     return element;
