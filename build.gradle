@@ -18,5 +18,8 @@ apply plugin: 'eclipse'
 apply plugin: 'java-project'
 apply plugin: 'java-code-style'
 
+dependencies {
+  compile group: 'org.jooq', name: 'jool', version: '0.9.14'
+}
 
 task wrapper(type: Wrapper) { gradleVersion = gradleVersion }
