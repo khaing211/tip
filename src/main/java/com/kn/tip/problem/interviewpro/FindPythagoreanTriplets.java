@@ -20,6 +20,9 @@ public class FindPythagoreanTriplets {
 
     final List<Integer> squared = array.stream()
         .map(i -> i * i)
+        // if the original array is sorted
+        // then we don't need this
+        // the algorithm should be O(n)
         .sorted()
         .collect(Collectors.toList());
 
@@ -31,6 +34,8 @@ public class FindPythagoreanTriplets {
       }
       final Integer b = squared.get(i-1);
       final Integer sum = a + b;
+      // we can also stop when sum > the last element of squared
+      // because we wouldn't never find the value
       lookupValues.add(sum);
     }
 
